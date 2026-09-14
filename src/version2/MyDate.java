@@ -1,6 +1,11 @@
 package version2;
 
 public class MyDate {
+    private static final String[] MONTH_NAMES = {
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    };
+
     public MyDate() {
         this.day = 1;
         this.month = 1;
@@ -8,21 +13,25 @@ public class MyDate {
     }
 
     public MyDate(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        setDay(day);
+        setMonth(month);
+        setYear(year);
     }
 
-    int day;
-    int month;
-    int year;
+    private int day;
+    private int month;
+    private int year;
 
     public int getDay() {
         return day;
     }
 
     public void setDay(int day) {
-        this.day = day;
+        if (day >= 1 && day <= 31) {
+            this.day = day;
+        } else {
+            this.day = 1;
+        }
     }
 
     public int getMonth() {
@@ -30,7 +39,11 @@ public class MyDate {
     }
 
     public void setMonth(int month) {
-        this.month = month;
+        if (month >= 1 && month <= 12) {
+            this.month = month;
+        } else {
+            this.month = 1;
+        }
     }
 
     public int getYear() {
@@ -38,6 +51,23 @@ public class MyDate {
     }
 
     public void setYear(int year) {
-        this.year = year;
+        if (year > 0) {
+            this.year = year;
+        } else {
+            this.year = 2026;
+        }
+    }
+
+    public String getMonthName() {
+        return MONTH_NAMES[month - 1];
+    }
+
+    public void displayDate() {
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        return day + " " + getMonthName() + " " + year;
     }
 }

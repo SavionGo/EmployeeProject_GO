@@ -101,7 +101,7 @@ public class HourlyEmployee {
                 " | Name: " + empName +
                 " | Hours: " + String.format("%.2f", totalHoursWorked) +
                 " | Rate: $" + String.format("%.2f", ratePerHour) +
-                "/hr | Total Salary: " + String.format("%.2f", computeSalary());
+                "/hr | Total Salary: $" + String.format("%.2f", computeSalary());
     }
 
 }
