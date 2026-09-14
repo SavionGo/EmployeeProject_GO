@@ -6,11 +6,6 @@ package version1;
  */
 public class BasePlusCommissionEmployee {
 
-    private int empID;
-    private String empName;
-    private double totalSale;
-    private double baseSalary;
-
     public BasePlusCommissionEmployee() {
         this.empID = 0;
         this.empName = "N/A";
@@ -31,6 +26,11 @@ public class BasePlusCommissionEmployee {
         setTotalSale(totalSale);
         setBaseSalary(baseSalary);
     }
+
+    private int empID;
+    private String empName;
+    private double totalSale;
+    private double baseSalary;
 
     public int getEmpID() {
         return empID;
@@ -94,7 +94,11 @@ public class BasePlusCommissionEmployee {
 
     @Override
     public String toString() {
-        return "BasePlusCommissionEmployee {" + "empID=" + empID + ", empName=" + empName + ", totalSale=$" + String.format("%.2f", totalSale) + ", baseSalary=$" + String.format("%.2f", baseSalary) + ", Total Salary=$" + String.format("%.2f", computeSalary()) + '}';
+        return  "ID: " + empID +
+                " | Name: " + empName +
+                " | Total Sale: $" + String.format("%.2f", totalSale) +
+                " | Base Salary: $" + String.format("%.2f", baseSalary) +
+                " | Total Salary: $" + String.format("%.2f", computeSalary());
     }
 
 }

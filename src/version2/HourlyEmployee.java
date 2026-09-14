@@ -1,9 +1,5 @@
-package version1;
+package version2;
 
-/**
- *
- * @author User
- */
 public class HourlyEmployee {
     public HourlyEmployee() {
         this.empID = 0;
@@ -12,14 +8,14 @@ public class HourlyEmployee {
         this.ratePerHour = 0;
     }
 
-    public HourlyEmployee(int empID, String empName) {
+    public HourlyEmployee(int empID, Name empName) {
         this.empID = empID;
         this.empName = empName;
         this.totalHoursWorked = 0;
         this.ratePerHour = 0;
     }
 
-    public HourlyEmployee(int empID, String empName, float totalHoursWorked, double ratePerHour) {
+    public HourlyEmployee(int empID, Name empName, float totalHoursWorked, double ratePerHour) {
         this.empID = empID;
         this.empName = empName;
         setTotalHoursWorked(totalHoursWorked);
@@ -27,9 +23,11 @@ public class HourlyEmployee {
     }
 
     private int empID;
-    private String empName;
     private float totalHoursWorked;
     private double ratePerHour;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;
@@ -105,4 +103,5 @@ public class HourlyEmployee {
     }
 
 }
+
 

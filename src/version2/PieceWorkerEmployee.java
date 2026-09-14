@@ -1,4 +1,4 @@
-package version1;
+package version2;
 
 /**
  *
@@ -12,14 +12,14 @@ public class PieceWorkerEmployee {
         this.ratePerPiece = 0;
     }
 
-    public PieceWorkerEmployee(int empID, String empName) {
+    public PieceWorkerEmployee(int empID, Name empName) {
         this.empID = empID;
         this.empName = empName;
         this.totalPiecesFinished = 0;
         this.ratePerPiece = 0;
     }
 
-    public PieceWorkerEmployee(int empID, String empName, int totalPiecesFinished, double ratePerPiece) {
+    public PieceWorkerEmployee(int empID, Name empName, int totalPiecesFinished, double ratePerPiece) {
         this.empID = empID;
         this.empName = empName;
         setTotalPiecesFinished(totalPiecesFinished);
@@ -27,9 +27,11 @@ public class PieceWorkerEmployee {
     }
 
     private int empID;
-    private String empName;
     private int totalPiecesFinished;
     private double ratePerPiece;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;
@@ -97,6 +99,7 @@ public class PieceWorkerEmployee {
                 " | Pieces Finished: " + totalPiecesFinished +
                 " | Rate/Piece: $" + String.format("%.2f", ratePerPiece) +
                 " | Total Salary: $" + String.format("%.2f", computeSalary());
-        }
+    }
+
 }
 

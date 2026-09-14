@@ -1,35 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package version1;
+package version2;
 
 /**
  *
  * @author User
  */
-public class CommissionEmployee {
-    public CommissionEmployee() {
+public class BasePlusCommissionEmployee {
+    public BasePlusCommissionEmployee() {
         this.empID = 0;
         this.empName = "N/A";
         this.totalSale = 0;
+        this.baseSalary = 0;
     }
 
-    public CommissionEmployee(int empID, String empName) {
+    public BasePlusCommissionEmployee(int empID, Name empName) {
         this.empID = empID;
         this.empName = empName;
         this.totalSale = 0;
+        this.baseSalary = 0;
     }
 
-    public CommissionEmployee(int empID, String empName, double totalSale) {
+    public BasePlusCommissionEmployee(int empID, Name empName, double totalSale, double baseSalary) {
         this.empID = empID;
         this.empName = empName;
         setTotalSale(totalSale);
+        setBaseSalary(baseSalary);
     }
 
     private int empID;
-    private String empName;
     private double totalSale;
+    private double baseSalary;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;
@@ -60,22 +62,34 @@ public class CommissionEmployee {
         }
     }
 
-    public double computeSalary() {
-        if (totalSale < 50000) {
-            return totalSale * 0.05;
-        } else if (totalSale < 100000) {
-            return totalSale * 0.10;
-        } else if (totalSale < 500000) {
-            return totalSale * 0.15;
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        if (baseSalary >= 0) {
+            this.baseSalary = baseSalary;
         } else {
-            return totalSale * 0.20;
+            this.baseSalary = 0;
         }
     }
 
-    public void displayCommissionEmployee() {
+    public double computeSalary() {
+        if (totalSale < 50000) {
+            return totalSale * 0.05 + baseSalary;
+        } else if (totalSale < 100000) {
+            return totalSale * 0.10 + baseSalary;
+        } else if (totalSale < 500000) {
+            return totalSale * 0.15 + baseSalary;
+        } else {
+            return totalSale * 0.20 + baseSalary;
+        }
+    }
+
+    public void displayBasePlusCommissionEmployee() {
         System.out.printf(
-                "ID: %d | Name: %s | Total Sale: $%.2f%n",
-                empID, empName, totalSale
+                "ID: %d | Name: %s | Total Sale: $%.2f | Base Salary: $%.2f%n",
+                empID, empName, totalSale, baseSalary
         );
     }
 
@@ -84,6 +98,7 @@ public class CommissionEmployee {
         return  "ID: " + empID +
                 " | Name: " + empName +
                 " | Total Sale: $" + String.format("%.2f", totalSale) +
+                " | Base Salary: $" + String.format("%.2f", baseSalary) +
                 " | Total Salary: $" + String.format("%.2f", computeSalary());
     }
 

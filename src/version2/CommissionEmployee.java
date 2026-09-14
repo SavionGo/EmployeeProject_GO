@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package version1;
+package version2;
 
 /**
  *
@@ -15,21 +15,23 @@ public class CommissionEmployee {
         this.totalSale = 0;
     }
 
-    public CommissionEmployee(int empID, String empName) {
+    public CommissionEmployee(int empID, Name empName) {
         this.empID = empID;
         this.empName = empName;
         this.totalSale = 0;
     }
 
-    public CommissionEmployee(int empID, String empName, double totalSale) {
+    public CommissionEmployee(int empID, Name empName, double totalSale) {
         this.empID = empID;
         this.empName = empName;
         setTotalSale(totalSale);
     }
 
     private int empID;
-    private String empName;
     private double totalSale;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;
