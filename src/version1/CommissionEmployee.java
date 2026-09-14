@@ -17,13 +17,13 @@ public class CommissionEmployee {
 
     public CommissionEmployee(int empID, String empName) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         this.totalSale = 0;
     }
 
     public CommissionEmployee(int empID, String empName, double totalSale) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         setTotalSale(totalSale);
     }
 

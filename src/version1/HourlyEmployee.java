@@ -14,14 +14,14 @@ public class HourlyEmployee {
 
     public HourlyEmployee(int empID, String empName) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         this.totalHoursWorked = 0;
         this.ratePerHour = 0;
     }
 
     public HourlyEmployee(int empID, String empName, float totalHoursWorked, double ratePerHour) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         setTotalHoursWorked(totalHoursWorked);
         setRatePerHour(ratePerHour);
     }

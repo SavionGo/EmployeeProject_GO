@@ -15,14 +15,14 @@ public class BasePlusCommissionEmployee {
 
     public BasePlusCommissionEmployee(int empID, String empName) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         this.totalSale = 0;
         this.baseSalary = 0;
     }
 
     public BasePlusCommissionEmployee(int empID, String empName, double totalSale, double baseSalary) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         setTotalSale(totalSale);
         setBaseSalary(baseSalary);
     }

@@ -14,14 +14,14 @@ public class PieceWorkerEmployee {
 
     public PieceWorkerEmployee(int empID, String empName) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         this.totalPiecesFinished = 0;
         this.ratePerPiece = 0;
     }
 
     public PieceWorkerEmployee(int empID, String empName, int totalPiecesFinished, double ratePerPiece) {
         this.empID = empID;
-        this.empName = empName;
+        setEmpName(empName);
         setTotalPiecesFinished(totalPiecesFinished);
         setRatePerPiece(ratePerPiece);
     }
@@ -97,6 +97,6 @@ public class PieceWorkerEmployee {
                 " | Pieces Finished: " + totalPiecesFinished +
                 " | Rate/Piece: $" + String.format("%.2f", ratePerPiece) +
                 " | Total Salary: $" + String.format("%.2f", computeSalary());
-        }
+    }
 }
 
