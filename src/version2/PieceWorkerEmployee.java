@@ -1,7 +1,5 @@
 package version2;
 
-import java.time.LocalDate;
-
 /**
  *
  * @author User
@@ -109,11 +107,7 @@ public class PieceWorkerEmployee {
         }
     }
 
-    public boolean isBirthMonth() {
-        return birthDate.getMonth() == LocalDate.now().getMonthValue();
-    }
-
-    public double computeSalary() {
+    public double computeSalary(int currentMonth) {
         double salary;
         if (totalPiecesFinished <= 100) {
             salary = totalPiecesFinished * ratePerPiece;
@@ -124,10 +118,14 @@ public class PieceWorkerEmployee {
             salary = basePay + bonusPay;
         }
 
-        if (isBirthMonth()) {
+        if (birthDate.getMonth() == currentMonth) {
             salary += BIRTHDAY_BONUS;
         }
         return salary;
+    }
+
+    public double computeSalary() {
+        return computeSalary(0);
     }
 
     private String employeeInfo() {

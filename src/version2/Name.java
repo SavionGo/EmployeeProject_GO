@@ -2,34 +2,37 @@ package version2;
 
 public class Name {
     public Name() {
-        this.firstName = "";
-        this.lastName = "";
-        this.middleName = "";
+        this.firstName = "N/A";
+        this.middleName = "N/A";
+        this.lastName = "N/A";
+        this.suffix = "";
     }
 
     public Name(String firstName, String lastName) {
         setFirstName(firstName);
         setLastName(lastName);
         this.middleName = "";
+        this.suffix = "";
     }
 
-    public Name(String firstName, String lastName, String middleName) {
+    public Name(String firstName, String middleName, String lastName) {
         setFirstName(firstName);
-        setLastName(lastName);
         setMiddleName(middleName);
+        setLastName(lastName);
+        this.suffix = "";
+    }
+
+    public Name(String firstName, String middleName, String lastName, String suffix) {
+        setFirstName(firstName);
+        setMiddleName(middleName);
+        setLastName(lastName);
+        setSuffix(suffix);
     }
 
     private String firstName;
     private String middleName;
     private String lastName;
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = (middleName == null) ? "" : middleName.trim();
-    }
+    private String suffix;
 
     public String getFirstName() {
         return firstName;
@@ -37,6 +40,14 @@ public class Name {
 
     public void setFirstName(String firstName) {
         this.firstName = (firstName == null) ? "" : firstName.trim();
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = (middleName == null) ? "" : middleName.trim();
     }
 
     public String getLastName() {
@@ -47,21 +58,32 @@ public class Name {
         this.lastName = (lastName == null) ? "" : lastName.trim();
     }
 
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = (suffix == null) ? "" : suffix.trim();
+    }
+
     public String getMiddleInitial() {
-        if (middleName.isEmpty()) {
+        if (middleName.isEmpty() || middleName.equals("N/A")) {
             return "";
         }
         return Character.toUpperCase(middleName.charAt(0)) + ".";
     }
 
     public String getFullName() {
-        if (firstName.isEmpty() && lastName.isEmpty() && middleName.isEmpty()) {
+        if (firstName.equals("N/A") && lastName.equals("N/A")) {
             return "N/A";
         }
 
         String fullName = lastName + ", " + firstName;
-        if (!middleName.isEmpty()) {
+        if (!getMiddleInitial().isEmpty()) {
             fullName += " " + getMiddleInitial();
+        }
+        if (!suffix.isEmpty()) {
+            fullName += " " + suffix;
         }
         return fullName;
     }

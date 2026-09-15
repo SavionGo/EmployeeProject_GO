@@ -4,8 +4,6 @@
  */
 package version2;
 
-import java.time.LocalDate;
-
 /**
  *
  * @author User
@@ -96,11 +94,7 @@ public class CommissionEmployee {
         }
     }
 
-    public boolean isBirthMonth() {
-        return birthDate.getMonth() == LocalDate.now().getMonthValue();
-    }
-
-    public double computeSalary() {
+    public double computeSalary(int currentMonth) {
         double salary;
         if (totalSale < 50000) {
             salary = totalSale * 0.05;
@@ -112,10 +106,14 @@ public class CommissionEmployee {
             salary = totalSale * 0.20;
         }
 
-        if (isBirthMonth()) {
+        if (birthDate.getMonth() == currentMonth) {
             salary += BIRTHDAY_BONUS;
         }
         return salary;
+    }
+
+    public double computeSalary() {
+        return computeSalary(0);
     }
 
     private String employeeInfo() {

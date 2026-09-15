@@ -1,7 +1,5 @@
 package version2;
 
-import java.time.LocalDate;
-
 public class HourlyEmployee {
     private static final double BIRTHDAY_BONUS = 5000;
 
@@ -105,11 +103,7 @@ public class HourlyEmployee {
         }
     }
 
-    public boolean isBirthMonth() {
-        return birthDate.getMonth() == LocalDate.now().getMonthValue();
-    }
-
-    public double computeSalary() {
+    public double computeSalary(int currentMonth) {
         if (totalHoursWorked < 0 || ratePerHour < 0) {
             return 0;
         }
@@ -124,10 +118,14 @@ public class HourlyEmployee {
             salary = regularPay + overtimePay;
         }
 
-        if (isBirthMonth()) {
+        if (birthDate.getMonth() == currentMonth) {
             salary += BIRTHDAY_BONUS;
         }
         return salary;
+    }
+
+    public double computeSalary() {
+        return computeSalary(0);
     }
 
     private String employeeInfo() {
