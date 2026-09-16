@@ -7,6 +7,13 @@ package version2;
 public class PieceWorkerEmployee {
     private static final double BIRTHDAY_BONUS = 5000;
 
+    private int empID;
+    private int totalPiecesFinished;
+    private double ratePerPiece;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
+
     public PieceWorkerEmployee() {
         this.empID = 0;
         this.empName = new Name();
@@ -43,13 +50,6 @@ public class PieceWorkerEmployee {
         setTotalPiecesFinished(totalPiecesFinished);
         setRatePerPiece(ratePerPiece);
     }
-
-    private int empID;
-    private int totalPiecesFinished;
-    private double ratePerPiece;
-    private Name empName;
-    private MyDate dateHired;
-    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;

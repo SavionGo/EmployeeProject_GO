@@ -3,6 +3,8 @@ package version3;
 import java.util.Objects;
 
 public class CommissionEmployee extends Employee {
+    private double totalSale;
+
     public CommissionEmployee() {
         super();
         this.totalSale = 0;
@@ -13,8 +15,6 @@ public class CommissionEmployee extends Employee {
         super(empID, empName, birthDate, dateHired);
         setTotalSale(totalSale);
     }
-
-    private double totalSale;
 
     public double getTotalSale() {
         return totalSale;

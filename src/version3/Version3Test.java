@@ -47,8 +47,10 @@ public class Version3Test {
         printHeader("OBJECT CONTRACT TESTS (equals & hashCode)");
         HourlyEmployee emp1 = new HourlyEmployee(5, new Name("Andrei", "Santos"),
                 new MyDate(21, 4, 1999), new MyDate(1, 3, 2023), 45f, 20);
+
         HourlyEmployee emp1Identical = new HourlyEmployee(5, new Name("Andrei", "Santos"),
                 new MyDate(21, 4, 1999), new MyDate(1, 3, 2023), 45f, 20);
+
         HourlyEmployee emp2 = new HourlyEmployee(5, new Name("Andrei", "Santos"),
                 new MyDate(21, 4, 1999), new MyDate(1, 3, 2023), 50f, 20);
 

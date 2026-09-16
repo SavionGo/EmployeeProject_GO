@@ -5,6 +5,11 @@ package version1;
  * @author User
  */
 public class HourlyEmployee {
+    private int empID;
+    private String empName;
+    private float totalHoursWorked;
+    private double ratePerHour;
+
     public HourlyEmployee() {
         this.empID = 0;
         this.empName = "N/A";
@@ -25,11 +30,6 @@ public class HourlyEmployee {
         setTotalHoursWorked(totalHoursWorked);
         setRatePerHour(ratePerHour);
     }
-
-    private int empID;
-    private String empName;
-    private float totalHoursWorked;
-    private double ratePerHour;
 
     public int getEmpID() {
         return empID;

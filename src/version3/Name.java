@@ -3,6 +3,11 @@ package version3;
 import java.util.Objects;
 
 public class Name implements Cloneable {
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String suffix;
+
     public Name() {
         this.firstName = "N/A";
         this.middleName = "N/A";
@@ -30,11 +35,6 @@ public class Name implements Cloneable {
         setLastName(lastName);
         setSuffix(suffix);
     }
-
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String suffix;
 
     public String getFirstName() {
         return firstName;

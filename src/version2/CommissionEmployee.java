@@ -11,6 +11,12 @@ package version2;
 public class CommissionEmployee {
     private static final double BIRTHDAY_BONUS = 5000;
 
+    private int empID;
+    private double totalSale;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
+
     public CommissionEmployee() {
         this.empID = 0;
         this.empName = new Name();
@@ -43,12 +49,6 @@ public class CommissionEmployee {
         setDateHired(dateHired);
         setTotalSale(totalSale);
     }
-
-    private int empID;
-    private double totalSale;
-    private Name empName;
-    private MyDate dateHired;
-    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;

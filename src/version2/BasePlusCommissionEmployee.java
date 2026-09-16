@@ -7,6 +7,13 @@ package version2;
 public class BasePlusCommissionEmployee {
     private static final double BIRTHDAY_BONUS = 5000;
 
+    private int empID;
+    private double totalSale;
+    private double baseSalary;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
+
     public BasePlusCommissionEmployee() {
         this.empID = 0;
         this.empName = new Name();
@@ -43,13 +50,6 @@ public class BasePlusCommissionEmployee {
         setTotalSale(totalSale);
         setBaseSalary(baseSalary);
     }
-
-    private int empID;
-    private double totalSale;
-    private double baseSalary;
-    private Name empName;
-    private MyDate dateHired;
-    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;

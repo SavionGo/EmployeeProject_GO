@@ -3,6 +3,9 @@ package version3;
 import java.util.Objects;
 
 public class PieceWorkerEmployee extends Employee {
+    private int totalPiecesFinished;
+    private double ratePerPiece;
+
     public PieceWorkerEmployee() {
         super();
         this.totalPiecesFinished = 0;
@@ -15,9 +18,6 @@ public class PieceWorkerEmployee extends Employee {
         setTotalPiecesFinished(totalPiecesFinished);
         setRatePerPiece(ratePerPiece);
     }
-
-    private int totalPiecesFinished;
-    private double ratePerPiece;
 
     public int getTotalPiecesFinished() {
         return totalPiecesFinished;

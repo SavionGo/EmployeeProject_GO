@@ -5,6 +5,11 @@ import java.util.Objects;
 public class Employee implements Cloneable {
     private static final double BIRTHDAY_BONUS = 5000;
 
+    private int empID;
+    private Name empName;
+    private MyDate birthDate;
+    private MyDate dateHired;
+
     public Employee() {
         this.empID = 0;
         this.empName = new Name();
@@ -18,11 +23,6 @@ public class Employee implements Cloneable {
         setBirthDate(birthDate);
         setDateHired(dateHired);
     }
-
-    private int empID;
-    private Name empName;
-    private MyDate birthDate;
-    private MyDate dateHired;
 
     public int getEmpID() {
         return empID;

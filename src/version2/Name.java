@@ -1,6 +1,11 @@
 package version2;
 
 public class Name {
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String suffix;
+
     public Name() {
         this.firstName = "N/A";
         this.middleName = "N/A";
@@ -28,11 +33,6 @@ public class Name {
         setLastName(lastName);
         setSuffix(suffix);
     }
-
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String suffix;
 
     public String getFirstName() {
         return firstName;
