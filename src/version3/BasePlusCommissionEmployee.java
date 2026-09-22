@@ -3,6 +3,8 @@ package version3;
 import java.util.Objects;
 
 public class BasePlusCommissionEmployee extends CommissionEmployee {
+    private double baseSalary;
+
     public BasePlusCommissionEmployee() {
         super();
         this.baseSalary = 0;
@@ -13,8 +15,6 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
         super(empID, empName, birthDate, dateHired, totalSale);
         setBaseSalary(baseSalary);
     }
-
-    private double baseSalary;
 
     public double getBaseSalary() {
         return baseSalary;

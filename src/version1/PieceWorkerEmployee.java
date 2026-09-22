@@ -5,6 +5,11 @@ package version1;
  * @author User
  */
 public class PieceWorkerEmployee {
+    private int empID;
+    private String empName;
+    private int totalPiecesFinished;
+    private double ratePerPiece;
+
     public PieceWorkerEmployee() {
         this.empID = 0;
         this.empName = "N/A";
@@ -25,11 +30,6 @@ public class PieceWorkerEmployee {
         setTotalPiecesFinished(totalPiecesFinished);
         setRatePerPiece(ratePerPiece);
     }
-
-    private int empID;
-    private String empName;
-    private int totalPiecesFinished;
-    private double ratePerPiece;
 
     public int getEmpID() {
         return empID;

@@ -8,6 +8,10 @@ public class MyDate implements Cloneable {
         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
     };
 
+    private int day;
+    private int month;
+    private int year;
+
     public MyDate() {
         this.day = 1;
         this.month = 1;
@@ -19,10 +23,6 @@ public class MyDate implements Cloneable {
         setMonth(month);
         setYear(year);
     }
-
-    private int day;
-    private int month;
-    private int year;
 
     public int getDay() {
         return day;

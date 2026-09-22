@@ -9,6 +9,10 @@ package version1;
  * @author User
  */
 public class CommissionEmployee {
+    private int empID;
+    private String empName;
+    private double totalSale;
+
     public CommissionEmployee() {
         this.empID = 0;
         this.empName = "N/A";
@@ -26,10 +30,6 @@ public class CommissionEmployee {
         setEmpName(empName);
         setTotalSale(totalSale);
     }
-
-    private int empID;
-    private String empName;
-    private double totalSale;
 
     public int getEmpID() {
         return empID;

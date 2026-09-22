@@ -3,6 +3,13 @@ package version2;
 public class HourlyEmployee {
     private static final double BIRTHDAY_BONUS = 5000;
 
+    private int empID;
+    private float totalHoursWorked;
+    private double ratePerHour;
+    private Name empName;
+    private MyDate dateHired;
+    private MyDate birthDate;
+
     public HourlyEmployee() {
         this.empID = 0;
         this.empName = new Name();
@@ -39,13 +46,6 @@ public class HourlyEmployee {
         setTotalHoursWorked(totalHoursWorked);
         setRatePerHour(ratePerHour);
     }
-
-    private int empID;
-    private float totalHoursWorked;
-    private double ratePerHour;
-    private Name empName;
-    private MyDate dateHired;
-    private MyDate birthDate;
 
     public int getEmpID() {
         return empID;

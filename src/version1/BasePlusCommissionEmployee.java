@@ -6,6 +6,11 @@ package version1;
  */
 public class BasePlusCommissionEmployee {
 
+    private int empID;
+    private String empName;
+    private double totalSale;
+    private double baseSalary;
+
     public BasePlusCommissionEmployee() {
         this.empID = 0;
         this.empName = "N/A";
@@ -26,11 +31,6 @@ public class BasePlusCommissionEmployee {
         setTotalSale(totalSale);
         setBaseSalary(baseSalary);
     }
-
-    private int empID;
-    private String empName;
-    private double totalSale;
-    private double baseSalary;
 
     public int getEmpID() {
         return empID;

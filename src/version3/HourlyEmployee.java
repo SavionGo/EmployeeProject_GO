@@ -3,6 +3,9 @@ package version3;
 import java.util.Objects;
 
 public class HourlyEmployee extends Employee {
+    private float totalHoursWorked;
+    private double ratePerHour;
+
     public HourlyEmployee() {
         super();
         this.totalHoursWorked = 0;
@@ -15,9 +18,6 @@ public class HourlyEmployee extends Employee {
         setTotalHoursWorked(totalHoursWorked);
         setRatePerHour(ratePerHour);
     }
-
-    private float totalHoursWorked;
-    private double ratePerHour;
 
     public float getTotalHoursWorked() {
         return totalHoursWorked;
