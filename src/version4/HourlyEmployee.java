@@ -43,8 +43,6 @@ public class HourlyEmployee extends Employee {
         }
     }
 
-    // Declared here, not in Employee. Callers holding an Employee reference
-    // must downcast to HourlyEmployee before they can call this.
     public double computeSalary(int currentMonth) {
         double salary;
         if (totalHoursWorked <= 40) {

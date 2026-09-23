@@ -43,8 +43,6 @@ public class PieceWorkerEmployee extends Employee {
         }
     }
 
-    // Declared here, not in Employee. Callers holding an Employee reference
-    // must downcast to PieceWorkerEmployee before they can call this.
     public double computeSalary(int currentMonth) {
         double basePay = totalPiecesFinished * ratePerPiece;
         double bonusPay = (totalPiecesFinished / 100) * (10 * ratePerPiece);

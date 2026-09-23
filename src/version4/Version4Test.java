@@ -22,7 +22,7 @@ public class Version4Test {
     public static void main(String[] args) {
         int targetMonth = 9;
 
-        // Roster Initialization
+
         printHeader("EMPLOYEE ROSTER INITIALIZATION & ENROLLMENT");
         EmployeeRoster roster = new EmployeeRoster(6);
         System.out.println("Roster created with capacity: " + roster.getMax());

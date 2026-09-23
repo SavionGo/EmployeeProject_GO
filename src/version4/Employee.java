@@ -56,10 +56,6 @@ public class Employee implements Cloneable {
         this.dateHired = (dateHired == null) ? new MyDate() : dateHired;
     }
 
-    // NOTE: This version deliberately has NO computeSalary() method.
-    // Salary logic lives only in the subclasses, so an Employee reference
-    // must be downcast before any salary can be computed.
-    // Only the shared birthday incentive rule is kept here.
     protected double getBirthdayBonus(int currentMonth) {
         if (birthDate.getMonth() == currentMonth) {
             return BIRTHDAY_BONUS;

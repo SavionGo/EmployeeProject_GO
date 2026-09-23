@@ -47,8 +47,6 @@ public class EmployeeRoster {
             if (empList[i].getEmpID() == empID) {
                 Employee removed = empList[i];
 
-                // Compaction: shift every element after i one slot to the left
-                // so the array never keeps a null gap in the middle.
                 for (int j = i; j < count - 1; j++) {
                     empList[j] = empList[j + 1];
                 }
@@ -91,9 +89,6 @@ public class EmployeeRoster {
         return total;
     }
 
-    // BasePlusCommissionEmployee extends CommissionEmployee, so
-    // "instanceof CommissionEmployee" would be true for both of them.
-    // getClass() == CommissionEmployee.class matches the exact type only.
     public int countCE() {
         int total = 0;
         for (int i = 0; i < count; i++) {
@@ -161,16 +156,12 @@ public class EmployeeRoster {
         }
     }
 
-    // ---------- Payroll (downcasting, because Employee has no computeSalary) ----------
-
     public void displayPayroll(int currentMonth) {
         for (int i = 0; i < count; i++) {
             Employee emp = empList[i];
             String label;
             double salary;
 
-            // Check BasePlusCommissionEmployee FIRST. It is also an instance of
-            // CommissionEmployee, so the reverse order would never reach this branch.
             if (emp instanceof BasePlusCommissionEmployee) {
                 BasePlusCommissionEmployee bpce = (BasePlusCommissionEmployee) emp;
                 label = "Base Plus Commission";
@@ -188,7 +179,6 @@ public class EmployeeRoster {
                 label = "Piece Worker";
                 salary = pwe.computeSalary(currentMonth);
             } else {
-                // A plain Employee has no salary formula at all.
                 label = "Employee";
                 salary = 0;
             }
