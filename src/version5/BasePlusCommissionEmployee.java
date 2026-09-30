@@ -28,8 +28,6 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
         }
     }
 
-    // Overrides the version inherited from CommissionEmployee.
-    // super.computeSalary() already adds the commission and the birthday bonus.
     @Override
     public double computeSalary(int currentMonth) {
         return baseSalary + super.computeSalary(currentMonth);

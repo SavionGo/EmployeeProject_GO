@@ -40,8 +40,6 @@ public class CommissionEmployee extends Employee {
         }
     }
 
-    // Declared here, not in Employee. Callers holding an Employee reference
-    // must downcast to CommissionEmployee before they can call this.
     public double computeSalary(int currentMonth) {
         return totalSale * getCommissionRate() + getBirthdayBonus(currentMonth);
     }

@@ -40,7 +40,6 @@ public class CommissionEmployee extends Employee {
         }
     }
 
-    // Overrides the baseline Employee.computeSalary() that returns 0.0.
     // Calling computeSalary() on an Employee reference lands here at runtime.
     @Override
     public double computeSalary(int currentMonth) {

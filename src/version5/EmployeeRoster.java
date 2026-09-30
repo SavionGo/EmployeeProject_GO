@@ -8,12 +8,9 @@ public class EmployeeRoster {
     }
 
     public EmployeeRoster(int initialCapacity) {
-        // initialCapacity is only a starting hint. The list still grows on its own.
         this.empList = new ArrayList<>(initialCapacity);
     }
 
-    // No max and no count fields: the ArrayList tracks its own size
-    // and resizes itself, so there is no capacity limit to guard.
     private ArrayList<Employee> empList;
 
     // ---------- Collection Operations ----------
@@ -49,7 +46,7 @@ public class EmployeeRoster {
         return empList.size();
     }
 
-    // ---------- Payroll: pure dynamic dispatch ----------
+    // ---------- Payroll ----------
 
     // No instanceof and no casting. Every element is handled as an Employee,
     // and the JVM runs whichever computeSalary() the real object overrides.

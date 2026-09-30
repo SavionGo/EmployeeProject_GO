@@ -56,10 +56,6 @@ public class Employee implements Cloneable {
         this.dateHired = (dateHired == null) ? new MyDate() : dateHired;
     }
 
-    // Baseline implementation. A plain Employee earns nothing, but declaring
-    // the method here gives every subclass a common contract, so an Employee
-    // reference can call computeSalary() and the JVM picks the subclass version
-    // at runtime (dynamic method dispatch) with no instanceof and no downcasting.
     public double computeSalary(int currentMonth) {
         return 0.0;
     }
