@@ -1,0 +1,83 @@
+package version6;
+
+import java.util.Objects;
+
+public class CommissionEmployee extends Employee {
+    public CommissionEmployee(int empID, Name empName, MyDate birthDate, MyDate dateHired,
+                              double totalSale) {
+        super(empID, empName, birthDate, dateHired);
+        setTotalSale(totalSale);
+    }
+
+    private double totalSale;
+
+    public double getTotalSale() {
+        return totalSale;
+    }
+
+    public void setTotalSale(double totalSale) {
+        if (totalSale < 0) {
+            throw new IllegalArgumentException("Total sale cannot be negative.");
+        }
+        this.totalSale = totalSale;
+    }
+
+    public double getCommissionRate() {
+        if (totalSale < 50000) {
+            return 0.05;
+        } else if (totalSale < 100000) {
+            return 0.10;
+        } else if (totalSale < 500000) {
+            return 0.15;
+        } else {
+            return 0.20;
+        }
+    }
+
+    @Override
+    public double computeSalary(int currentMonth) {
+        return totalSale * getCommissionRate() + getBirthdayBonus(currentMonth);
+    }
+
+    // No month given, so no birthday bonus (month 0 never matches).
+    @Override
+    public double computeSalary() {
+        return computeSalary(0);
+    }
+
+    @Override
+    protected String employeeInfo() {
+        return super.employeeInfo() +
+                " | Total Sale: $" + String.format("%.2f", totalSale);
+    }
+
+    @Override
+    public void displayEmployee() {
+        System.out.println(employeeInfo());
+    }
+
+    @Override
+    public String toString() {
+        return employeeInfo() +
+                " | Total Salary: $" + String.format("%.2f", computeSalary());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)) {
+            return false;
+        }
+        CommissionEmployee other = (CommissionEmployee) obj;
+        return totalSale == other.totalSale;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), totalSale);
+    }
+
+    @Override
+    public CommissionEmployee clone() {
+        return (CommissionEmployee) super.clone();
+    }
+}
